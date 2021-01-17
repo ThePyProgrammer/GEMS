@@ -3,6 +3,8 @@ Generic Events Management System.
 
 Created as part of CS3233 Module at NUS High School.
 
+See pdf for all the details.
+
 
 ## Overall User Interface (UI)
 GEMS was built on JavaFX and is resizable to a certain extent. The application has a minimized toolbar with tooltips to provide very basic info regarding the tabs. Additionally, the top bar is also custom-made.
