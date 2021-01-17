@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="699.0" minHeight="542.0" prefHeight="699.0" prefWidth="1462.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.MonitorController">
+    <GridPane layoutX="17.0" prefHeight="699.0" prefWidth="1453.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="542.0" prefWidth="482.0" spacing="20.0" GridPane.columnIndex="0">
+                    <children>
+                        <ComboBox fx:id="eventBox" onAction="#setEvent" prefHeight="26.0" prefWidth="250.0" />
+                        <ComboBox fx:id="venueBox" onAction="#setVenue" prefHeight="26.0" prefWidth="250.0" />
+                        <Separator prefHeight="9.0" prefWidth="255.0" VBox.vgrow="NEVER" />
+                        <RadioButton fx:id="checkIn" mnemonicParsing="false" text="Check In">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="inOrOut" />
+                            </toggleGroup>
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <padding>
+                     <Insets top="27.0" />
+                  </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="checkOut" mnemonicParsing="false" text="Check Out" toggleGroup="$inOrOut">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <padding>
+                     <Insets top="27.0" />
+                  </padding></RadioButton>
+                        <Separator prefWidth="200.0">
+                  <padding>
+                     <Insets top="27.0" />
+                  </padding></Separator>
+                        <Button fx:id="scan" mnemonicParsing="false" onAction="#scanAction" prefHeight="62.0" prefWidth="250.0" text="SCAN">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="massOut" mnemonicParsing="false" onAction="#massCheckOut" text="Mass Checkout">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="602.0" prefWidth="1048.0" spacing="10.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                    <children>
+                        <ImageView fx:id="code" fitHeight="337.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="message" alignment="CENTER" prefHeight="54.0" prefWidth="979.0">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <GridPane prefHeight="310.0" prefWidth="1048.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="702.4" minWidth="10.0" prefWidth="477.6001037597656" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="606.5998840332032" minWidth="0.0" prefWidth="569.7998962402345" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="218.0" prefWidth="224.0" spacing="20.0">
+                                    <children>
+                                        <Label fx:id="maxCap" text="Max Capacity:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="currCap" text="Current Capacity: ">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="percentCap" text="____% filled">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="187.0" prefWidth="227.0" GridPane.columnIndex="1" GridPane.vgrow="NEVER">
+                                    <children>
+                                        <Label text="Capacity">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <PieChart fx:id="chart" maxHeight="254.0" maxWidth="294.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="254.0" prefWidth="294.0" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" maxWidth="713.600048828125" minWidth="55.19998779296875" prefWidth="442.4000244140625" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1048.7999755859375" minWidth="49.60002441406249" prefWidth="1048.7999755859375" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="900.0" minHeight="444.0" prefHeight="700.0" />
+            </rowConstraints>
+    </GridPane>
+</AnchorPane>

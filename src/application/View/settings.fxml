@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="699.0" minHeight="542.0" prefHeight="699.0" prefWidth="1462.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.SettingsController">
+   <children>
+      <BorderPane layoutX="156.0" layoutY="-26.0" maxWidth="711.0" prefHeight="542.0" prefWidth="711.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <SplitPane dividerPositions="0.41591096455070076" prefHeight="405.0" prefWidth="711.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane maxWidth="858.0" minHeight="0.0" minWidth="355.5" prefHeight="611.0" prefWidth="858.0">
+                     <children>
+                        <VBox layoutX="69.0" layoutY="50.0" prefHeight="500.8" prefWidth="443.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <RadioButton fx:id="singleCode" mnemonicParsing="false" onAction="#setSelect" prefHeight="18.0" prefWidth="118.0" text="Single eQRCode">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                                  <toggleGroup>
+                                      <ToggleGroup fx:id="type" />
+                                  </toggleGroup>
+                              </RadioButton>
+                              <VBox fx:id="single" disable="true" prefHeight="574.0" prefWidth="645.0">
+                                 <children>
+                                    <GridPane prefHeight="184.0" prefWidth="522.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="114.20000762939453" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.39997558593745" minWidth="10.0" prefWidth="200.00001220703123" />
+                                          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="405.5999877929688" minWidth="10.0" prefWidth="345.5999877929688" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Name" />
+                                          <Label text="Contact No." GridPane.rowIndex="1" />
+                                          <Label text="Event" GridPane.rowIndex="2" />
+                                          <TextField fx:id="nameField" promptText="name" GridPane.columnIndex="1" />
+                                          <TextField fx:id="contactField" prefHeight="26.0" prefWidth="213.0" promptText="contact" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="eventBox" prefHeight="26.0" prefWidth="202.0" promptText="Select Event" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Venues Disallowed" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="venueBox" prefHeight="26.0" prefWidth="206.0" promptText="Select Venue" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Button fx:id="addVenue" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="31.0" text="+" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="removeVenue" mnemonicParsing="false" onAction="#remove" prefHeight="31.0" prefWidth="31.0" text="-" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </GridPane>
+                                    <TableView fx:id="venueTable" prefHeight="366.0" prefWidth="582.0">
+                                      <columns>
+                                        <TableColumn fx:id="venueID" prefWidth="189.6000064611435" text="Venue ID" />
+                                        <TableColumn fx:id="venueName" prefWidth="646.4000030517578" text="Venue" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children></VBox>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                <AnchorPane maxWidth="630.0" minHeight="0.0" minWidth="355.5" prefHeight="611.0" prefWidth="630.0">
+                     <children>
+                        <VBox layoutY="-2.0" maxWidth="543.0" prefHeight="602.0" prefWidth="542.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-2.0">
+                           <children>
+                              <RadioButton fx:id="loadCode" mnemonicParsing="false" onAction="#setSelect" text="Load Multiple eQRCode" toggleGroup="$type">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <HBox fx:id="multiple" alignment="CENTER" disable="true" prefHeight="51.0" prefWidth="356.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="261.0">
+                                       <children>
+                                          <Label text="File Path">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="pathField" editable="false" prefHeight="26.0" prefWidth="175.0">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="browseButton" mnemonicParsing="false" onAction="#browse" prefHeight="26.0" prefWidth="62.0" text="Browse" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="codeTable" disable="true" prefHeight="516.0" prefWidth="595.0">
+                                <columns>
+                                  <TableColumn fx:id="codeID" prefWidth="162.79996621608734" text="eQRCodeID" />
+                                  <TableColumn fx:id="codeName" minWidth="3.4000244140625" prefWidth="448.0000457763672" text="Name" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children></VBox>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="711.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="eQRCode Key">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <PasswordField fx:id="key" editable="false" />
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="generateButton" mnemonicParsing="false" onAction="#generate" prefHeight="26.0" prefWidth="131.0" text="Generate">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

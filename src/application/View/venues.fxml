@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="699.0" minHeight="542.0" prefHeight="699.0" prefWidth="1462.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.VenueController">
+   <VBox layoutX="24.0" prefHeight="699.0" prefWidth="1412.0" spacing="10.0">
+        <children>
+            <GridPane prefHeight="119.0" prefWidth="658.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="467.2" minWidth="10.0" prefWidth="140.2" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.2" minWidth="0.0" prefWidth="137.8" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.2" minWidth="10.0" prefWidth="175.39999999999998" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="754.4" minWidth="10.0" prefWidth="638.4" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label text="Venue">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets right="10.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label layoutX="60.0" layoutY="30.0" text="Room Number" GridPane.rowIndex="1">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets right="10.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="Max Capacity" GridPane.rowIndex="2">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="venueName" promptText="Name of the Venue" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </TextField>
+                    <Spinner fx:id="maxCapacity" editable="true" prefHeight="26.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField fx:id="roomNum" prefHeight="26.0" prefWidth="97.0" promptText="Room Number" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </TextField>
+                </children>
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <TableView fx:id="table" prefHeight="329.0" prefWidth="658.0">
+                <columns>
+                    <TableColumn fx:id="venueId" prefWidth="179.20000839233398" text="Venue Id" />
+                    <TableColumn fx:id="venue" prefWidth="895.9999237060547" text="Venue" />
+                    <TableColumn fx:id="roomNo" prefWidth="195.2000732421875" text="Room No" />
+                    <TableColumn fx:id="maxCap" prefWidth="175.199951171875" text="Max Capacity" />
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="658.0" spacing="30.0">
+                <children>
+                    <Button fx:id="create" mnemonicParsing="false" onAction="#addVenue" text="Add">
+                  <font>
+                     <Font size="13.0" />
+                  </font></Button>
+                    <Button fx:id="edit" mnemonicParsing="false" onAction="#editVenue" text="Edit">
+                  <font>
+                     <Font size="13.0" />
+                  </font></Button>
+                    <Button fx:id="delete" mnemonicParsing="false" onAction="#deleteVenue" text="Delete">
+                  <font>
+                     <Font size="13.0" />
+                  </font></Button>
+                    <Button fx:id="save" mnemonicParsing="false" onAction="#saveVenues" text="Save">
+                  <font>
+                     <Font size="13.0" />
+                  </font></Button>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+</AnchorPane>

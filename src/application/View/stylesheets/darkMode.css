@@ -1,0 +1,7 @@
+.parent {
+    -fx-background-color: #565656;
+}
+
+.label {
+    -fx-text-fill: white;
+}
