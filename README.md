@@ -3,6 +3,11 @@ Generic Events Management System.
 
 Created as part of CS3233 Module at NUS High School.
 
+The COVID-19 pandemic has disrupted the way people live their lives. The raging pandemic has triggered unprecedented restrictions not only on the movement of people, but also on a range of economic activities, and the declaration of national emergencies in many countries. To suppress the widespread of COVID-19 in Singapore, our government tightened borders, quarantined suspected cases and ring-fenced any infection clusters through contact tracing. The Ministry of Health (MOH) introduced strict safe distancing measures to limit gatherings outside of work and school. Physical distancing of at least 1m was enforced in most settings where interactions are non-transient. The general public were encouraged to practice good personal hygiene and social responsibility.
+
+In addition, the development of Safe-Entry and TraceTogether apps are national initiatives to combat the spread of the virus by means of identification and tracking of people who have come into contact with COVID-19 carriers. At an organizational level, entities may want to implement their own processes to control and manage visitors to their premises. NUS High organizes several events all year round such as open house, seminars, workshops, competitions, etc. Thus, having a software system to monitor crowds and limit entry to venues would be beneficial to enforce safe distancing measures and contact tracing. I have thus created a Generic Events Management System (GEMS) for NUS High. All visitors to any event will be issued with an entry pass in the form of an AES-Encrypted QR code (eQRCode), containing basic information of the visitor in an encrypted form.
+
+
 See pdf for all the details.
 
 
